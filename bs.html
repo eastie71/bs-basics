@@ -85,6 +85,100 @@
         <div class="col-sm bg-secondary border">ROW 2 - 2 of 3 (33.3%) Aenean lectus eros, consequat et vehicula a, elementum non libero. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</div>
         <div class="col-sm bg-secondary border">ROW 2 - 2 of 3 (33.3%) Aenean lectus eros, consequat et vehicula a, elementum non libero. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</div>
       </div>
+
+      <h3 class="mt-3">Form example - Sign Up</h3>
+      <form id="needs-validation" novalidate>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputEmail" class="col-form-label">Email</label>
+            <input type="email" class="form-control" id="inputEmail" placeholder="email@example.com" required>
+            <div class="invalid-feedback">
+              Please provide a valid email address.
+            </div>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputPassword" class="col-form-label">Password</label>
+            <input type="password" class="form-control" id="inputPassword" placeholder="Password" required>
+            <div class="invalid-feedback">
+              Please provide a password.
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputAddress" class="col-form-label">Address</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="Enter Address" required>
+          <div class="invalid-feedback">
+              Please provide a valid address.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputAddress2" class="col-form-label">Address 2</label>
+          <input type="text" class="form-control" id="inputAddress2" placeholder="">
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputSuburb" class="col-form-label">Suburb</label>
+            <input type="text" class="form-control" id="inputSuburb" required>
+            <div class="invalid-feedback">
+              Please provide a valid suburb.
+            </div>
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputState" class="col-form-label">State</label>
+            <select class="form-control" id="inputState" required>
+              <option></option>
+              <option>ACT</option>
+              <option>New South Wales</option>
+              <option>Queensland</option>
+              <option>South Australia</option>
+              <option>Victoria</option>
+              <option>Western Australia</option>
+            </select>
+            <div class="invalid-feedback">
+              Please select a state.
+            </div>
+          </div>
+          <div class="form-group col-md-2">
+            <label for="inputPostcode" class="col-form-label">Postcode</label>
+            <input type="text" class="form-control" id="inputPostcode" required>
+            <div class="invalid-feedback">
+              Please provide a valid postcode.
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Sign Up!</button>
+      </form>
+
+      <h3 class="mt-3">Table example</h3>
+      <table class="table table-hover table-inverse">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Username</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Craig</td>
+            <td>Eastwood</td>
+            <td>@eastie71</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Townsend</td>
+            <td>@listen</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Big Bird</td>
+            <td>@bbird</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
     <!-- Optional JavaScript -->
@@ -92,5 +186,20 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      (function() {
+        "use strict";
+        window.addEventListener("load", function() {
+          var form = document.getElementById("needs-validation");
+          form.addEventListener("submit", function(event) {
+            if (form.checkValidity() == false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add("was-validated");
+          }, false);
+        }, false);
+      }());            
+    </script>
   </body>
 </html>
